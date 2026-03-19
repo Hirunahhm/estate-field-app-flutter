@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Estate ERP Field Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#37ec13",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#132210",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased selection:bg-primary selection:text-black">
+    <div class="relative flex min-h-screen w-full flex-col overflow-hidden">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <div
+                class="absolute inset-0 bg-gradient-to-t from-background-dark via-background-dark/90 to-background-dark/70 z-10">
+            </div>
+            <img alt="Rubber plantation forest background" class="h-full w-full object-cover opacity-60"
+                data-alt="Dark misty rubber plantation forest trees"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwLiZTqgLoW7qUX8umj5ICIGPZ6UfWQ2wEeP9yZkPGU09nURyR7RLDKSU8eBBJJQegWqFb0qadtlNcpOR_eqUC5Ybr1Xbf1WuoSoVKWUf1CYCjvCjeq9fiSi9sn8nU5yfaqqPHiFHd-Jx9GiL5Dallh7v_WJ4lLKViyVKrl9y4TpRFGLtiE6fCAGqvySnJUdCZupERu4lesJe6SGJoSPHBZYq-Xqq5J4w49RqXFhRStWCDLeHehAzT82wTZXDSe1dHjslsPgr2Qsw" />
+        </div>
+        <!-- Main Content Container -->
+        <div class="relative z-20 flex flex-1 flex-col px-6 py-8 justify-between h-full max-w-md mx-auto w-full">
+            <!-- Header Section -->
+            <div class="mt-12 flex flex-col items-start space-y-2">
+                <div class="flex items-center gap-3 mb-2">
+                    <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-primary text-black">
+                        <span class="material-symbols-outlined text-3xl">forest</span>
+                    </div>
+                    <span class="text-primary font-bold tracking-widest text-sm uppercase">Estate ERP</span>
+                </div>
+                <h1 class="text-4xl font-black tracking-tight text-white leading-tight">
+                    Field Ops<br />
+                    <span class="text-primary">Login</span>
+                </h1>
+                <p class="text-slate-400 text-lg font-medium mt-2">Enter credentials to start shift.</p>
+            </div>
+            <!-- Form Section -->
+            <div class="flex flex-col gap-6 w-full my-auto py-8">
+                <!-- Estate ID Input -->
+                <label class="flex flex-col gap-2 group">
+                    <span
+                        class="text-sm font-bold uppercase tracking-wider text-slate-400 ml-1 group-focus-within:text-primary transition-colors">Estate
+                        ID</span>
+                    <div class="relative flex items-center">
+                        <input
+                            class="peer w-full h-16 rounded-xl border-2 border-slate-600 bg-slate-900/50 px-4 text-xl font-bold text-white placeholder-slate-500 focus:border-primary focus:ring-4 focus:ring-primary/20 outline-none transition-all pl-14"
+                            placeholder="ID-0000" type="text" />
+                        <span
+                            class="material-symbols-outlined absolute left-4 text-slate-400 peer-focus:text-primary text-2xl transition-colors">badge</span>
+                    </div>
+                </label>
+                <!-- Password Input -->
+                <label class="flex flex-col gap-2 group">
+                    <span
+                        class="text-sm font-bold uppercase tracking-wider text-slate-400 ml-1 group-focus-within:text-primary transition-colors">Password</span>
+                    <div class="relative flex items-center">
+                        <input
+                            class="peer w-full h-16 rounded-xl border-2 border-slate-600 bg-slate-900/50 px-4 text-xl font-bold text-white placeholder-slate-500 focus:border-primary focus:ring-4 focus:ring-primary/20 outline-none transition-all pl-14"
+                            placeholder="••••••••" type="password" />
+                        <span
+                            class="material-symbols-outlined absolute left-4 text-slate-400 peer-focus:text-primary text-2xl transition-colors">lock</span>
+                    </div>
+                </label>
+            </div>
+            <!-- Actions Section -->
+            <div class="flex flex-col gap-4 mb-8">
+                <!-- Main Login Button -->
+                <button
+                    class="flex w-full items-center justify-center gap-3 rounded-xl bg-primary h-16 px-8 transition-transform active:scale-[0.98] shadow-[0_0_20px_rgba(55,236,19,0.3)] hover:shadow-[0_0_30px_rgba(55,236,19,0.5)]">
+                    <span class="text-background-dark text-xl font-black uppercase tracking-wide">Secure Login</span>
+                    <span class="material-symbols-outlined text-background-dark text-3xl font-bold">arrow_forward</span>
+                </button>
+                <!-- Biometrics Button -->
+                <button
+                    class="flex w-full items-center justify-center gap-3 rounded-xl border-2 border-primary/30 bg-primary/10 h-16 px-8 transition-colors hover:bg-primary/20 active:bg-primary/30 active:border-primary">
+                    <span class="material-symbols-outlined text-primary text-3xl">fingerprint</span>
+                    <span class="text-primary text-lg font-bold uppercase tracking-wide">Use Biometrics</span>
+                </button>
+            </div>
+            <!-- Bottom Indicator -->
+            <div class="absolute bottom-2 left-0 right-0 flex justify-center pb-4 opacity-50">
+                <div class="h-1.5 w-32 rounded-full bg-slate-700"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

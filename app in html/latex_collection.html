@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Latex Collection Wizard</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#37ec13",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#132210",
+                        "surface-dark": "#1a2e16",
+                        "surface-dark-highlight": "#233d1e",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        /* Custom scrollbar hiding for cleaner mobile look */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen flex flex-col overflow-hidden">
+    <!-- Top App Bar -->
+    <header
+        class="bg-background-dark/95 backdrop-blur-md sticky top-0 z-50 border-b border-primary/20 pt-safe-top pb-2 px-4 shadow-lg">
+        <div class="flex items-center justify-between h-14">
+            <button class="text-slate-100 p-2 hover:bg-primary/20 rounded-full transition-colors">
+                <span class="material-symbols-outlined text-[28px]">arrow_back</span>
+            </button>
+            <h1 class="text-lg font-bold tracking-tight text-white uppercase">Collection Wizard</h1>
+            <button
+                class="text-primary font-bold text-sm bg-primary/10 px-3 py-1.5 rounded hover:bg-primary/20 transition-colors">
+                HELP
+            </button>
+        </div>
+        <!-- Load Number Indicator -->
+        <div class="flex items-center justify-between mt-2 mb-1 bg-surface-dark rounded border border-primary/30 p-3">
+            <div class="flex flex-col">
+                <span class="text-xs text-primary/80 font-medium uppercase tracking-wider">Current Load</span>
+                <span class="text-xl font-bold text-white tracking-widest font-mono">#LD-2023-891</span>
+            </div>
+            <div
+                class="h-8 w-8 rounded-full bg-primary flex items-center justify-center shadow-[0_0_10px_rgba(55,236,19,0.4)]">
+                <span class="material-symbols-outlined text-background-dark font-bold text-lg">sync</span>
+            </div>
+        </div>
+    </header>
+    <!-- Main Content Area -->
+    <main class="flex-1 overflow-y-auto no-scrollbar pb-32 px-4 pt-4">
+        <!-- Step 1: Select Tapper -->
+        <section class="mb-8">
+            <div class="flex items-center justify-between mb-3">
+                <h2 class="text-white text-base font-bold uppercase tracking-wider flex items-center gap-2">
+                    <span class="bg-primary text-background-dark text-xs font-bold px-2 py-0.5 rounded">01</span>
+                    Select Tapper
+                </h2>
+                <span class="text-xs text-slate-400">4 nearby</span>
+            </div>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                <!-- Tapper Card (Active) -->
+                <div class="group relative cursor-pointer">
+                    <div class="absolute inset-0 bg-primary/20 rounded-lg blur-sm transition-opacity opacity-100"></div>
+                    <div
+                        class="relative flex flex-col items-center bg-surface-dark-highlight border-2 border-primary rounded-lg p-3 h-full transition-transform active:scale-95">
+                        <div class="absolute top-2 right-2 text-primary">
+                            <span class="material-symbols-outlined filled text-xl">check_circle</span>
+                        </div>
+                        <div class="w-16 h-16 rounded-full bg-cover bg-center mb-3 border-2 border-primary/50"
+                            data-alt="Portrait of John Doe, estate worker"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDShKSGEYlcxTVOQuKV-PllW86ViPqhNd3Srak5iDYbeytQu3m0dWp94F9BSJXcS7kmRDac-h0acJmt1DXCYvnVl90VqxWJ7s7j9MP2WwFpTpeiacSfZwmKw7RS_13X4pinM64WR9d_fGvmzKE_MqD6gXffcICq_8qdFaNMwrOUnNrvcf8sSm4RuyOCi7bXbU5ebUeOMRMkT5u6uxuplyyDSJkfwTN-0PbPB1md-cXz-QpANib0XGcdehzKhF6veYTus37n5EubT_A');">
+                        </div>
+                        <p class="text-white font-bold text-sm leading-tight text-center">John Doe</p>
+                        <p class="text-primary text-xs font-mono mt-1">ID: 8821</p>
+                    </div>
+                </div>
+                <!-- Tapper Card -->
+                <div class="group relative cursor-pointer">
+                    <div
+                        class="relative flex flex-col items-center bg-surface-dark border border-slate-700 rounded-lg p-3 h-full hover:border-slate-500 transition-colors active:scale-95">
+                        <div class="w-16 h-16 rounded-full bg-cover bg-center mb-3 grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all"
+                            data-alt="Portrait of Jane Smith, estate worker"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCJL2palId7b0HgXMh3x5LtbUYRXrzq6_NZDsgnNQw-AZgX70_BWugfDnZzdJ3Kr1F648edOfzlmuZYRKFuvTYa9rUZ30OWxgnFVUuh-Ek00MJ1lxNFDKWPTXWecq37o4NKGuf8_tmBOqrITKN8VCfvpJIW9cGJUwEGmcNV3y1IcsBFbGEoccTpuNX6rQc3AHeUbskXSbA4dvYBt7I_JWpmA_JVp8Ep5MgYJgtguEwoaxWSHNQnKwbenoXTh6aoX4oDAceJY7OTM9k');">
+                        </div>
+                        <p class="text-slate-300 font-medium text-sm leading-tight text-center group-hover:text-white">
+                            Jane Smith</p>
+                        <p class="text-slate-500 text-xs font-mono mt-1">ID: 8822</p>
+                    </div>
+                </div>
+                <!-- Tapper Card -->
+                <div class="group relative cursor-pointer">
+                    <div
+                        class="relative flex flex-col items-center bg-surface-dark border border-slate-700 rounded-lg p-3 h-full hover:border-slate-500 transition-colors active:scale-95">
+                        <div class="w-16 h-16 rounded-full bg-cover bg-center mb-3 grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all"
+                            data-alt="Portrait of Bob Brown, estate worker"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDZQ--DAOBNYY8y9fdhJFTtM3-viIVZvAilqmEStLeteSUOD1sCaKZax-Wen7FahCbTpVK9rJUU08JAMmap8lqd1K16KZvGppZ0hRbFqSk7oQZ3dnSGYQiZNGhn4mmHKoFKzMdIR-9id-zULmACzp32_bDS4-MfrrvlL_EQKrTSwugTVv5GPsRar-i_H17nggFTGB83YgocjnUwh5UpZLKcWgyGTsOcR-GGjSGY6moFRgGVZNISmM3EXnSXfNcvaqf0T2k-hD8OVJg');">
+                        </div>
+                        <p class="text-slate-300 font-medium text-sm leading-tight text-center group-hover:text-white">
+                            Bob Brown</p>
+                        <p class="text-slate-500 text-xs font-mono mt-1">ID: 8823</p>
+                    </div>
+                </div>
+                <!-- Tapper Card -->
+                <div class="group relative cursor-pointer">
+                    <div
+                        class="relative flex flex-col items-center bg-surface-dark border border-slate-700 rounded-lg p-3 h-full hover:border-slate-500 transition-colors active:scale-95">
+                        <div class="w-16 h-16 rounded-full bg-cover bg-center mb-3 grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all"
+                            data-alt="Portrait of Alice White, estate worker"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDhBMWYCiDSV5-j-8d5u4Kf1zR_qkxoECbI7K9D6BYpX5y33vwZot6dFC0V-8oqE6urRG2Qdw8r5hjaFQp-Xys3Uvc4mYFeegMyoFrugrm34knW7nY8gz9EvWqvVDG32q2TLn1O0H3GS8C_W0fLc2pQEssAMU0DhFd6WpqP0JJZ1w70KkvTFEYeKVSNU2c1s7BaC3Cn7jkeFWqMe7MzroLFJhn8aV0IkeRUN-PtLhK4-z3ZqIwZBMnSVWXuqAzBltCkwR4FnAcyTfk');">
+                        </div>
+                        <p class="text-slate-300 font-medium text-sm leading-tight text-center group-hover:text-white">
+                            Alice White</p>
+                        <p class="text-slate-500 text-xs font-mono mt-1">ID: 8824</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Steps 2 & 3: Volume & Weight -->
+        <section class="mb-8">
+            <h2 class="text-white text-base font-bold uppercase tracking-wider flex items-center gap-2 mb-3">
+                <span class="bg-primary text-background-dark text-xs font-bold px-2 py-0.5 rounded">02</span>
+                Metrics
+            </h2>
+            <div class="flex gap-3">
+                <!-- Volume Input -->
+                <div
+                    class="flex-1 bg-surface-dark rounded-lg p-4 border border-slate-700 focus-within:border-primary focus-within:ring-1 focus-within:ring-primary transition-all relative">
+                    <label class="text-xs text-slate-400 font-bold uppercase block mb-1">Volume</label>
+                    <div class="flex items-end">
+                        <input
+                            class="w-full bg-transparent border-none p-0 text-3xl font-bold text-white placeholder-slate-600 focus:ring-0 appearance-none leading-none"
+                            placeholder="0.0" type="number" />
+                        <span class="text-primary font-bold text-lg mb-1 ml-1">L</span>
+                    </div>
+                </div>
+                <!-- Weight Input -->
+                <div
+                    class="flex-1 bg-surface-dark rounded-lg p-4 border border-slate-700 focus-within:border-primary focus-within:ring-1 focus-within:ring-primary transition-all relative">
+                    <label class="text-xs text-slate-400 font-bold uppercase block mb-1">Weight</label>
+                    <div class="flex items-end">
+                        <input
+                            class="w-full bg-transparent border-none p-0 text-3xl font-bold text-white placeholder-slate-600 focus:ring-0 appearance-none leading-none"
+                            placeholder="0.0" type="number" />
+                        <span class="text-primary font-bold text-lg mb-1 ml-1">kg</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Step 4: Ammonia Added -->
+        <section class="mb-6">
+            <h2 class="text-white text-base font-bold uppercase tracking-wider flex items-center gap-2 mb-3">
+                <span class="bg-primary text-background-dark text-xs font-bold px-2 py-0.5 rounded">03</span>
+                Ammonia Treatment
+            </h2>
+            <div class="bg-surface-dark rounded-lg p-4 border border-slate-700 flex items-center justify-between">
+                <button
+                    class="h-14 w-14 flex items-center justify-center rounded bg-slate-800 text-white hover:bg-slate-700 active:bg-slate-600 transition-colors border border-slate-600">
+                    <span class="material-symbols-outlined text-3xl">remove</span>
+                </button>
+                <div class="flex flex-col items-center">
+                    <span class="text-4xl font-bold text-white font-mono tracking-tighter">50</span>
+                    <span class="text-sm text-primary font-medium uppercase tracking-widest">Milliliters</span>
+                </div>
+                <button
+                    class="h-14 w-14 flex items-center justify-center rounded bg-slate-800 text-white hover:bg-slate-700 active:bg-slate-600 transition-colors border border-slate-600">
+                    <span class="material-symbols-outlined text-3xl">add</span>
+                </button>
+            </div>
+        </section>
+        <!-- Notes Section (Optional but good for completeness) -->
+        <section class="mb-4">
+            <div
+                class="bg-surface-dark rounded-lg px-4 py-3 border border-slate-700 flex items-center gap-3 text-slate-400">
+                <span class="material-symbols-outlined text-slate-500">sticky_note_2</span>
+                <span class="text-sm font-medium">Add field notes...</span>
+            </div>
+        </section>
+    </main>
+    <!-- Sticky Footer -->
+    <footer
+        class="fixed bottom-0 left-0 right-0 bg-background-dark/95 backdrop-blur-md border-t border-slate-800 p-4 pb-6 z-50">
+        <button
+            class="w-full bg-primary hover:bg-green-400 active:bg-green-500 text-background-dark text-lg font-black uppercase tracking-widest py-4 rounded-lg shadow-[0_0_20px_rgba(55,236,19,0.25)] flex items-center justify-center gap-2 transition-all transform active:scale-[0.98]">
+            <span class="material-symbols-outlined font-bold text-2xl">save</span>
+            Save Record
+        </button>
+    </footer>
+</body>
+
+</html>
