@@ -8,14 +8,12 @@ class FeatureGridCard extends StatelessWidget {
     required this.icon,
     required this.category,
     required this.title,
-    required this.iconBgColor,
     required this.onTap,
   });
 
   final IconData icon;
   final String category;
   final String title;
-  final Color iconBgColor;
   final VoidCallback onTap;
 
   @override
@@ -26,8 +24,9 @@ class FeatureGridCard extends StatelessWidget {
       child: InkWell(
         onTap: onTap,
         borderRadius: BorderRadius.circular(12),
+        highlightColor: AppColors.primary.withValues(alpha: 0.06),
+        splashColor: AppColors.primary.withValues(alpha: 0.1),
         child: Container(
-          height: 144,
           padding: const EdgeInsets.all(16),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(12),
@@ -36,22 +35,16 @@ class FeatureGridCard extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Container(
-                width: 44,
-                height: 44,
-                decoration: BoxDecoration(
-                  color: iconBgColor,
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                child: Icon(icon, color: Colors.white, size: 22),
-              ),
+              // Icon — no background box, just a clean outlined icon
+              Icon(icon, color: AppColors.primary, size: 26),
               const Spacer(),
               Text(
                 category,
                 style: GoogleFonts.inter(
                   color: AppColors.textMuted,
-                  fontSize: 11,
-                  fontWeight: FontWeight.w500,
+                  fontSize: 10,
+                  fontWeight: FontWeight.w600,
+                  letterSpacing: 0.8,
                 ),
               ),
               const SizedBox(height: 2),
@@ -59,9 +52,11 @@ class FeatureGridCard extends StatelessWidget {
                 title,
                 style: GoogleFonts.inter(
                   color: Colors.white,
-                  fontSize: 14,
+                  fontSize: 13,
                   fontWeight: FontWeight.w600,
                 ),
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
               ),
             ],
           ),

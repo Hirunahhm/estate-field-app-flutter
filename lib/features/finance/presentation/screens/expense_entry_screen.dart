@@ -46,15 +46,21 @@ class _ExpenseEntryScreenState extends ConsumerState<ExpenseEntryScreen> {
         ),
         title: Text(
           'New Expense',
-          style: GoogleFonts.inter(color: Colors.white, fontWeight: FontWeight.w600),
+          style: GoogleFonts.inter(
+            color: Colors.white,
+            fontWeight: FontWeight.w600,
+          ),
         ),
         centerTitle: true,
         actions: [
           TextButton(
-            onPressed: () {},
+            onPressed: () => context.go('/sales'),
             child: Text(
-              'Drafts',
-              style: GoogleFonts.inter(color: AppColors.textMuted),
+              'Sale',
+              style: GoogleFonts.inter(
+                color: AppColors.primary,
+                fontWeight: FontWeight.w600,
+              ),
             ),
           ),
         ],
@@ -87,7 +93,9 @@ class _ExpenseEntryScreenState extends ConsumerState<ExpenseEntryScreen> {
                     child: TextField(
                       controller: _amountController,
                       onChanged: notifier.updateAmount,
-                      keyboardType: const TextInputType.numberWithOptions(decimal: true),
+                      keyboardType: const TextInputType.numberWithOptions(
+                        decimal: true,
+                      ),
                       textAlign: TextAlign.center,
                       style: GoogleFonts.inter(
                         color: Colors.white,
@@ -155,7 +163,8 @@ class _ExpenseEntryScreenState extends ConsumerState<ExpenseEntryScreen> {
                   initialDate: state.date,
                   firstDate: DateTime(2020),
                   lastDate: DateTime.now(),
-                  builder: (ctx, child) => Theme(data: ThemeData.dark(), child: child!),
+                  builder: (ctx, child) =>
+                      Theme(data: ThemeData.dark(), child: child!),
                 );
                 if (picked != null) notifier.updateDate(picked);
               },
@@ -168,11 +177,18 @@ class _ExpenseEntryScreenState extends ConsumerState<ExpenseEntryScreen> {
                 ),
                 child: Row(
                   children: [
-                    const Icon(Symbols.calendar_today, color: AppColors.textMuted, size: 20),
+                    const Icon(
+                      Symbols.calendar_today,
+                      color: AppColors.textMuted,
+                      size: 20,
+                    ),
                     const SizedBox(width: 12),
                     Text(
                       '${state.date.day}/${state.date.month}/${state.date.year}',
-                      style: GoogleFonts.inter(color: Colors.white, fontSize: 15),
+                      style: GoogleFonts.inter(
+                        color: Colors.white,
+                        fontSize: 15,
+                      ),
                     ),
                   ],
                 ),
