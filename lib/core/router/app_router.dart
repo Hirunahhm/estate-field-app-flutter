@@ -14,12 +14,33 @@ final appRouter = GoRouter(
   routes: [
     GoRoute(path: '/login', builder: (context, state) => const LoginScreen()),
     GoRoute(path: '/home', builder: (context, state) => const HomeScreen()),
-    GoRoute(path: '/attendance', builder: (context, state) => const TapperAttendanceScreen()),
-    GoRoute(path: '/attendance/record-trees', builder: (context, state) => const RecordTreesScreen()),
-    GoRoute(path: '/latex', builder: (context, state) => const LatexCollectionWizard()),
-    GoRoute(path: '/metrolac', builder: (context, state) => const MetrolacUpdateScreen()),
-    GoRoute(path: '/expense', builder: (context, state) => const ExpenseEntryScreen()),
-    GoRoute(path: '/sales', builder: (context, state) => const SalesRecordScreen()),
-    GoRoute(path: '/stats', builder: (context, state) => const StatsDashboardScreen()),
+    GoRoute(
+      path: '/attendance',
+      builder: (context, state) => const TapperAttendanceScreen(),
+    ),
+    GoRoute(
+      path: '/attendance/record-trees',
+      builder: (context, state) => const RecordTreesScreen(),
+    ),
+    GoRoute(
+      path: '/latex',
+      builder: (context, state) => const LatexCollectionWizard(),
+    ),
+    GoRoute(
+      path: '/metrolac',
+      builder: (context, state) => const MetrolacUpdateScreen(),
+    ),
+    GoRoute(
+      path: '/expense',
+      builder: (context, state) => const ExpenseEntryScreen(),
+    ),
+    GoRoute(
+      path: '/sales',
+      builder: (context, state) => const SalesRecordScreen(),
+    ),
+    GoRoute(
+      path: '/stats',
+      builder: (context, state) => const StatsDashboardScreen(),
+    ),
   ],
 );

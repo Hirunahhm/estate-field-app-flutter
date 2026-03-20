@@ -29,13 +29,12 @@ class HomeScreen extends ConsumerWidget {
               ),
               child: Row(
                 children: [
-                  CircleAvatar(
-                    radius: 20,
-                    backgroundColor: AppColors.surfaceBorder,
-                    child: const Icon(
-                      Symbols.person,
-                      color: AppColors.textMuted,
-                      size: 20,
+                  ClipOval(
+                    child: Image.asset(
+                      'assets/Madukotewatte_estate_logo.png',
+                      width: 40,
+                      height: 40,
+                      fit: BoxFit.cover,
                     ),
                   ),
                   const SizedBox(width: 12),
