@@ -7,6 +7,7 @@ import '../../features/production/presentation/screens/latex_collection_wizard.d
 import '../../features/lab/presentation/screens/metrolac_update_screen.dart';
 import '../../features/finance/presentation/screens/expense_entry_screen.dart';
 import '../../features/finance/presentation/screens/sales_record_screen.dart';
+import '../../features/home/presentation/screens/stats_dashboard_screen.dart';
 
 final appRouter = GoRouter(
   initialLocation: '/login',
@@ -19,5 +20,6 @@ final appRouter = GoRouter(
     GoRoute(path: '/metrolac', builder: (context, state) => const MetrolacUpdateScreen()),
     GoRoute(path: '/expense', builder: (context, state) => const ExpenseEntryScreen()),
     GoRoute(path: '/sales', builder: (context, state) => const SalesRecordScreen()),
+    GoRoute(path: '/stats', builder: (context, state) => const StatsDashboardScreen()),
   ],
 );

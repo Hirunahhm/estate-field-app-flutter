@@ -5,7 +5,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:gap/gap.dart';
 import 'package:material_symbols_icons/symbols.dart';
 import '../../../../core/theme/app_colors.dart';
-import '../../../../core/widgets/app_bottom_nav.dart';
 import '../../../../core/widgets/app_primary_button.dart';
 import '../../../../core/widgets/app_screen_header.dart';
 import '../providers/metrolac_notifier.dart';
@@ -206,15 +205,6 @@ class _MetrolacUpdateScreenState extends ConsumerState<MetrolacUpdateScreen> {
               ? () => notifier.saveReading(() => context.go('/home'))
               : null,
         ),
-      ),
-      bottomNavigationBar: AppBottomNav(
-        currentIndex: 2, // Lab / Quality
-        onTap: (i) {
-          if (i == 0) context.go('/home');
-          if (i == 1) context.go('/attendance');
-          if (i == 2) {} // already here
-          if (i == 3) context.go('/expense');
-        },
       ),
     );
   }

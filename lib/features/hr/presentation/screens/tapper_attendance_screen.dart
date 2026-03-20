@@ -17,7 +17,6 @@ class TapperAttendanceScreen extends ConsumerStatefulWidget {
 
 class _TapperAttendanceScreenState extends ConsumerState<TapperAttendanceScreen> {
   final _searchController = TextEditingController();
-  int _tabIndex = 0;
 
   @override
   void dispose() {
@@ -164,15 +163,6 @@ class _TapperAttendanceScreenState extends ConsumerState<TapperAttendanceScreen>
           'Record Trees',
           style: GoogleFonts.inter(fontWeight: FontWeight.w600),
         ),
-      ),
-      bottomNavigationBar: NavigationBar(
-        selectedIndex: _tabIndex,
-        onDestinationSelected: (i) => setState(() => _tabIndex = i),
-        destinations: const [
-          NavigationDestination(icon: Icon(Symbols.home), label: 'Home'),
-          NavigationDestination(icon: Icon(Symbols.groups), label: 'Field'),
-          NavigationDestination(icon: Icon(Symbols.account_balance_wallet), label: 'Finance'),
-        ],
       ),
     );
   }

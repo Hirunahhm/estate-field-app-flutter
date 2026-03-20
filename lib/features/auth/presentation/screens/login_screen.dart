@@ -53,20 +53,11 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const Gap(32),
-                  // Logo box
-                  Container(
-                    width: 72,
-                    height: 72,
-                    decoration: BoxDecoration(
-                      color: AppColors.primary.withValues(alpha: 0.15),
-                      borderRadius: BorderRadius.circular(16),
-                      border: Border.all(color: AppColors.primary.withValues(alpha: 0.3)),
-                    ),
-                    child: const Icon(
-                      Symbols.forest,
-                      color: AppColors.primary,
-                      size: 36,
-                    ),
+                  // Brand logo
+                  Image.asset(
+                    'assets/Madukotewatte_estate_logo.png',
+                    width: 96,
+                    height: 96,
                   ),
                   const Gap(24),
                   Text(
