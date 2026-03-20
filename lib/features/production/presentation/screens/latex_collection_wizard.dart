@@ -32,13 +32,6 @@ class _LatexCollectionWizardState extends ConsumerState<LatexCollectionWizard> {
   final _volumeController = TextEditingController();
   final _weightController = TextEditingController();
   final _notesController = TextEditingController();
-  int _subNavIndex = 0;
-
-  static const _subNavTabs = [
-    'Latex Production',
-    'Ammonia Tracking',
-    'Rubber Solid Collection',
-  ];
 
   @override
   void dispose() {
@@ -70,59 +63,6 @@ class _LatexCollectionWizardState extends ConsumerState<LatexCollectionWizard> {
                   'Load ID: L-0042',
                   style: GoogleFonts.inter(color: AppColors.textMuted, fontSize: 12),
                 ),
-              ),
-            ),
-            // ── Sub-nav bar ──────────────────────────────────────────────
-            Container(
-              decoration: const BoxDecoration(
-                color: AppColors.background,
-                border: Border(
-                  bottom: BorderSide(color: AppColors.surfaceBorder),
-                ),
-              ),
-              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-              child: Row(
-                children: [
-                  const Icon(Symbols.menu, color: AppColors.textMuted, size: 20),
-                  const SizedBox(width: 8),
-                  Expanded(
-                    child: SingleChildScrollView(
-                      scrollDirection: Axis.horizontal,
-                      child: Row(
-                        children: List.generate(_subNavTabs.length, (i) {
-                          final isActive = i == _subNavIndex;
-                          return GestureDetector(
-                            onTap: () => setState(() => _subNavIndex = i),
-                            child: AnimatedContainer(
-                              duration: const Duration(milliseconds: 180),
-                              margin: const EdgeInsets.only(right: 6),
-                              padding: const EdgeInsets.symmetric(
-                                horizontal: 14,
-                                vertical: 7,
-                              ),
-                              decoration: BoxDecoration(
-                                color: isActive ? Colors.white : Colors.transparent,
-                                borderRadius: BorderRadius.circular(999),
-                              ),
-                              child: Text(
-                                _subNavTabs[i],
-                                style: GoogleFonts.inter(
-                                  color: isActive
-                                      ? AppColors.background
-                                      : AppColors.textMuted,
-                                  fontSize: 13,
-                                  fontWeight: isActive
-                                      ? FontWeight.w600
-                                      : FontWeight.w400,
-                                ),
-                              ),
-                            ),
-                          );
-                        }),
-                      ),
-                    ),
-                  ),
-                ],
               ),
             ),
             Expanded(
