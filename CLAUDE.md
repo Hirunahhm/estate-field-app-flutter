@@ -44,22 +44,32 @@ flutter build windows      # Windows
 
 ## Architecture
 
-Currently a minimal Flutter starter. As features are built out, the expected structure for an ERP field app is:
+This project strictly follows a **Feature-First Clean Architecture**:
 
 ```
 lib/
-├── main.dart              # App entry point; MaterialApp setup
-├── features/              # Feature-first organization (recommended)
-│   └── <feature>/
-│       ├── data/          # Data sources, repositories, models
-│       ├── domain/        # Business logic, entities
-│       └── presentation/  # Widgets, screens, state management
-├── core/                  # Shared utilities, constants, theme
-└── shared/                # Reusable widgets
+├── core/                  # Global utilities, themes, constants & shared components
+├── features/              # Feature modules
+│   ├── auth/              # Login Screen
+│   ├── home/              # Dashboard
+│   ├── hr/                # Tapper Attendance
+│   ├── production/        # Latex Collection & Record Trees
+│   ├── lab/               # Metrolac Quality Update
+│   └── finance/           # Expenses & Sales
+└── main.dart              # Entry point & global config
 ```
+Each feature MUST contain `data/`, `domain/`, and `presentation/` layers where applicable. 
 
-**State management**: No state management library is added yet. When adding one, update this file with the chosen approach (Riverpod, Bloc, Provider, etc.) and any conventions.
+**State management**: We use **Flutter Riverpod**.
+- Use `AsyncNotifier` or `StateNotifier` for UI state. 
+- Do not map complex state using `setState()`.
+- Place providers in `lib/features/[feature]/presentation/providers/`.
+
+## Design System & Translating HTML
+- **Colors**: Use `AppColors` derived from the mockups (Primary: `#37ec13`, BackgroundDark: `#132210`, SurfaceDark: `#1e3319`). Do not hardcode colors in widgets.
+- **Typography**: Strictly use `GoogleFonts.inter()`.
+- **Icons**: Use the `material_symbols_icons` package.
 
 ## Linting
 
-Uses `package:flutter_lints/flutter.yaml` (default Flutter recommended rules). Custom rules can be added to `analysis_options.yaml`.
+Uses `package:flutter_lints/flutter.yaml`. Add custom rules to `analysis_options.yaml` as needed.
